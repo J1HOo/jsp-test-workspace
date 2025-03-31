@@ -1,0 +1,32 @@
+1. resource
+정적 리소스를 위한 폴더
+CSS, JS, 이미지, 폰트 같은 정적 파일을 보관하는 곳
+브라우저가 직접 접근 가능
+
+예)
+src/main/resource/static/css/styles.css
+
+브라우저 접근
+http://localhost:8080/css/styles.css
+로 코드를 볼 수 있음
+
+2. WEB-INF = WEB-INFormation 웹-정보
+서버 컨테이너 에서 WEB-INF 폴더는
+외부에서 직접 접근하지 못하도록 막아둠
+서버 컨테이너를 만든 사람이 시초부터 WEB-INF 폴더 자체는
+어떤 브라우저에서도 접근할 수 없도록 설정
+
+보안 목적 + JSP 와 같은 뷰 파일의 저장소
+브라우저에서 직접 접근 불가능한 영역
+주로 JSP 와 같은 파일을 두는 VIEW 전용 폴더로 사용
+컨트롤러가 내부에서만 접근해서 렌더링하는 용도로 씀
+
+=> 웹에서 JSP나 설정 파일, 라이브러리 등 중요한 서버 자원들이
+직접 노출되면 보안상 위험하기 때문에 보안 폴더를 만들어둔 것
+보안 폴더 명칭 = WEB-INF
+
+예)
+src/main/webapp/WEB-INF/views/home.jsp
+
+브라우저 접근
+http://localhost:8080/webapp/WEB-INF/views/home.jsp (접근 불가!!)
